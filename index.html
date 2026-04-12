@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مازن الجيلاني - السيرة الذاتية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Cairo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(20, 20, 40, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a4a;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+            background: #1e1e3a;
+            border-radius: 50px;
+            margin-bottom: 40px;
+            border: 1px solid #3a3a6a;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            background: #2a2a4a;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #4a4a7a;
+        }
+
+        .nav-link i {
+            margin-left: 8px;
+            color: #4fc3f7;
+        }
+
+        .nav-link:hover {
+            background: #4fc3f7;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 195, 247, 0.3);
+        }
+
+        .nav-link:hover i {
+            color: #000;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(145deg, #1e1e3a, #151530);
+            border-radius: 20px;
+            border: 1px solid #3a3a6a;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4fc3f7;
+            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #4fc3f7, #2196f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 20px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #2a2a4a, #1e1e3a);
+            color: white;
+            border: 1px solid #4a4a7a;
+            padding: 15px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn i {
+            margin-left: 10px;
+            font-size: 18px;
+            color: #4fc3f7;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(79, 195, 247, 0.3);
+            background: linear-gradient(135deg, #3a3a6a, #2a2a4a);
+            border-color: #4fc3f7;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-card {
+            background: #1e1e3a;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #3a3a6a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .content-card h2 {
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-bottom: 2px solid #3a3a6a;
+            padding-bottom: 10px;
+        }
+
+        .content-card h2 i {
+            margin-left: 10px;
+        }
+
+        .work-item {
+            background: #151530;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-right: 4px solid #4fc3f7;
+        }
+
+        .work-item h3 {
+            color: #4fc3f7;
+            margin-bottom: 10px;
+        }
+
+        .project-btn {
+            background: #2a2a4a;
+            color: white;
+            border: 1px solid #4fc3f7;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .project-btn:hover {
+            background: #4fc3f7;
+            color: #000;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #151530;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid #3a3a6a;
+        }
+
+        .contact-item:hover {
+            background: #2a2a4a;
+            transform: translateX(-5px);
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            margin-left: 15px;
+            color: #4fc3f7;
+            width: 30px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .certificate-item {
+            background: #151530;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-right: 4px solid #ffd700;
+        }
+
+        .certificate-item h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .map-container {
+            background: #151530;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .map-link {
+            display: inline-block;
+            background: #2a2a4a;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 15px;
+            border: 1px solid #4fc3f7;
+            transition: all 0.3s;
+        }
+
+        .map-link:hover {
+            background: #4fc3f7;
+            color: #000;
+        }
+
+        .reference-item {
+            background: #151530;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .reference-item h3 {
+            color: #4fc3f7;
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            background: #2a2a4a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #4a4a7a;
+        }
+
+        .back-btn:hover {
+            background: #3a3a6a;
+        }
+
+        .address-text {
+            color: #4fc3f7;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .word-style {
+            background: linear-gradient(145deg, #1a1a2e, #151530);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #3a3a6a;
+            position: relative;
+        }
+
+        .word-style::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4fc3f7, #2196f3, #ffd700);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .skill-item {
+            background: #151530;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #3a3a6a;
+        }
+
+        .skill-item i {
+            color: #4fc3f7;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- الصفحة الرئيسية -->
+        <div id="homePage" class="page active">
+            <div class="profile-section word-style">
+                <img src="me.jpg.jpeg" alt="جديد/me.jpg.jpeg" class="profile-img" onerror="this.src='https://via.placeholder.com/180?text=مازن+الجيلاني'">
+                <h1 class="name">مازن علي بن علي سعيد الجيلاني</h1>
+                <p class="title">طالب تقنية معلومات | مطور ويب طموح</p>
+                
+                <div class="action-buttons">
+                    <button class="btn" onclick="showPage('portfolioPage')">
+                        <i class="fas fa-briefcase"></i>
+                        نماذج الأعمال
+                    </button>
+                    <button class="btn" onclick="showPage('contactPage')">
+                        <i class="fas fa-envelope"></i>
+                        معلومات الاتصال
+                    </button>
+                    <button class="btn" onclick="showPage('referencesPage')">
+                        <i class="fas fa-users"></i>
+                        المرجعيون
+                    </button>
+                    <button class="btn" onclick="showPage('certificatesPage')">
+                        <i class="fas fa-certificate"></i>
+                        الشهادات العلمية
+                    </button>
+                    <button class="btn" onclick="showPage('locationPage')">
+                        <i class="fas fa-map-marker-alt"></i>
+                        الموقع الجغرافي
+                    </button>
+                </div>
+            </div>
+
+            <div class="top-nav">
+                <a href="#" onclick="showPage('homePage'); return false;" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    الرئيسية
+                </a>
+                <a href="#" onclick="showPage('portfolioPage'); return false;" class="nav-link">
+                    <i class="fas fa-briefcase"></i>
+                    الأعمال
+                </a>
+                <a href="#" onclick="showPage('contactPage'); return false;" class="nav-link">
+                    <i class="fas fa-address-card"></i>
+                    الاتصال
+                </a>
+                <a href="#" onclick="showPage('certificatesPage'); return false;" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    الشهادات
+                </a>
+                <a href="#" onclick="showPage('locationPage'); return false;" class="nav-link">
+                    <i class="fas fa-location-dot"></i>
+                    الموقع
+                </a>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-user"></i> النبذة التعريفية</h2>
+                <p style="line-height: 1.8; font-size: 18px; margin-bottom: 20px;">
+                    طالب طموح في مجال تقنية المعلومات، شغوف بالتعلم المستمر واكتساب مهارات جديدة كل يوم. أؤمن بأن عالم التقنية مليء بالفرص والتحديات التي تستحق الاستكشاف. هدفي هو تحقيق إنجازات ملموسة في هذا المجال، والمساهمة في بناء حلول تقنية مبتكرة تخدم المجتمع.
+                </p>
+                <p style="line-height: 1.8; font-size: 18px;">
+                    أعمل يومياً على تطوير معرفتي في البرمجة والشبكات وأمن المعلومات، وأسعى لأن أكون عنصراً فاعلاً في أي بيئة عمل تقنية. أتمتع بحب الاستطلاع التقني والقدرة على التعلم الذاتي السريع، وأطمح للمشاركة في مشاريع حقيقية تضيف إلى خبرتي العملية.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-bullseye"></i> الهدف المهني</h2>
+                <p style="line-height: 1.8; font-size: 18px;">
+                    أسعى للحصول على فرصة تدريبية أو وظيفية في مجال تقنية المعلومات تتيح لي تطبيق ما تعلمته أكاديمياً في بيئة عملية، واكتساب خبرات جديدة من العمل مع محترفين في المجال، والمساهمة في مشاريع تقنية ذات قيمة مضافة، وتحقيق إنجازات تثبت كفاءتي وتطور مساري المهني، وتعلم تقنيات وأدوات جديدة كل يوم.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-code"></i> المهارات التقنية</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>أساسيات الشبكات</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>أمن المعلومات</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-desktop"></i>
+                        <h3>صيانة الحاسب</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-star"></i> المهارات الشخصية</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-brain"></i>
+                        <h3>التعلم الذاتي السريع</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>الشغف بالتقنيات الجديدة</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <h3>حل المشكلات</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-users"></i>
+                        <h3>العمل بروح الفريق</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>الالتزام بالمواعيد</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>المرونة والتكيف</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-language"></i> اللغات</h2>
+                <p style="font-size: 18px; margin-bottom: 10px;"><strong>العربية:</strong> اللغة الأم</p>
+                <p style="font-size: 18px;"><strong>الإنجليزية:</strong> مستوى متوسط (قيد التطوير)</p>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-heart"></i> الاهتمامات والهوايات</h2>
+                <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 2;">
+                    <li><i class="fas fa-robot" style="color: #4fc3f7; margin-left: 10px;"></i> متابعة أخبار التكنولوجيا والذكاء الاصطناعي</li>
+                    <li><i class="fas fa-mobile-alt" style="color: #4fc3f7; margin-left: 10px;"></i> تجربة البرامج والتطبيقات الجديدة</li>
+                    <li><i class="fas fa-users-cog" style="color: #4fc3f7; margin-left: 10px;"></i> المشاركة في المجتمعات التقنية عبر الإنترنت</li>
+                    <li><i class="fas fa-code-branch" style="color: #4fc3f7; margin-left: 10px;"></i> تعلم لغات البرمجة المختلفة</li>
+                </ul>
+            </div>
+
+            <div class="content-card" style="text-align: center;">
+                <h2 style="border: none;"><i class="fas fa-quote-right"></i> شعار شخصي</h2>
+                <p style="font-size: 28px; color: #4fc3f7; font-weight: bold;">"أتعلم اليوم لأنطلق غداً"</p>
+            </div>
+        </div>
+
+        <!-- صفحة نماذج الأعمال -->
+        <div id="portfolioPage" class="page">
+            <button class="back-btn" onclick="showPage('homePage')">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <div class="content-card word-style">
+                <h2><i class="fas fa-briefcase"></i> نماذج من أعمالي</h2>
+                
+                <div class="work-item">
+                    <h3><i class="fas fa-wifi"></i> صفحة تسجيل الدخول لشبكة الواي فاي</h3>
+                    <p>صفحة احترافية لتسجيل الدخول إلى شبكة الواي فاي مع تصميم عصري وجذاب</p>
+                    <a href="https://albaz7403-jpg.github.io/alatheer/" target="_blank" class="project-btn">
+                        <i class="fas fa-external-link-alt"></i> فتح المشروع
+                    </a>
+                </div>
+                
+                <div class="work-item">
+                    <h3><i class="fas fa-birthday-cake"></i> موقع مخبز الكيك</h3>
+                    <p>متجر إلكتروني متكامل لعرض وبيع منتجات المخبز مع تصميم احترافي</p>
+                    <a href="https://albaz7403-jpg.github.io/shoping/" target="_blank" class="project-btn">
+                        <i class="fas fa-external-link-alt"></i> فتح المشروع
+                    </a>
+                </div>
+                
+                <div class="work-item">
+                    <h3><i class="fas fa-book"></i> مكتبة تخزين الكتب</h3>
+                    <p>منصة رقمية لإدارة وتخزين الكتب مع واجهة سهلة الاستخدام</p>
+                    <a href="https://albaz7403-jpg.github.io/book/" target="_blank" class="project-btn">
+                        <i class="fas fa-external-link-alt"></i> فتح المشروع
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة معلومات الاتصال -->
+        <div id="contactPage" class="page">
+            <button class="back-btn" onclick="showPage('homePage')">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <div class="content-card word-style">
+                <h2><i class="fas fa-address-card"></i> معلومات الاتصال</h2>
+                <div class="contact-info">
+                    <div class="contact-item" onclick="window.location.href='mailto:mazen.aljeelani@example.com'">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:mazen.aljeelani@example.com">mazen.aljeelani@example.com</a>
+                    </div>
+                    <div class="contact-item" onclick="window.location.href='tel:+967123456789'">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+967123456789">+967 123 456 789</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/967123456789">WhatsApp</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/albaz7403-jpg" target="_blank">GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة المرجعيون -->
+        <div id="referencesPage" class="page">
+            <button class="back-btn" onclick="showPage('homePage')">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <div class="content-card word-style">
+                <h2><i class="fas fa-users"></i> المرجعيون</h2>
+                <div class="reference-item">
+                    <h3>د. أحمد محمد - مدير تقنية المعلومات</h3>
+                    <div class="contact-item" onclick="window.location.href='tel:+967123456789'">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+967123456789">+967 123 456 789</a>
+                    </div>
+                    <div class="contact-item" onclick="window.location.href='mailto:ahmed@company.com'">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:ahmed@company.com">ahmed@company.com</a>
+                    </div>
+                </div>
+                <div class="reference-item">
+                    <h3>م. سارة علي - مديرة المشاريع</h3>
+                    <div class="contact-item" onclick="window.location.href='tel:+967987654321'">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+967987654321">+967 987 654 321</a>
+                    </div>
+                    <div class="contact-item" onclick="window.location.href='mailto:sara@projects.com'">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sara@projects.com">sara@projects.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة الشهادات العلمية -->
+        <div id="certificatesPage" class="page">
+            <button class="back-btn" onclick="showPage('homePage')">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <div class="content-card word-style">
+                <h2><i class="fas fa-certificate"></i> الشهادات العلمية</h2>
+                <div class="certificate-item">
+                    <h3>شهادة الثانوية العامة – القسم العلمي</h3>
+                    <p>تقدير جيد جداً</p>
+                </div>
+                <div class="certificate-item">
+                    <h3>طالب بكالوريوس تقنية معلومات</h3>
+                    <p>قيد الدراسة - المستوى الثالث</p>
+                </div>
+                <div class="certificate-item">
+                    <h3>شهادة تطوير الويب - HTML & CSS</h3>
+                    <p>منصة إدراك - 2023</p>
+                </div>
+                <div class="certificate-item">
+                    <h3>شهادة JavaScript Essentials</h3>
+                    <p>Cisco Networking Academy - 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة الموقع الجغرافي -->
+        <div id="locationPage" class="page">
+            <button class="back-btn" onclick="showPage('homePage')">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <div class="content-card word-style">
+                <h2><i class="fas fa-map-marker-alt"></i> موقعي الجغرافي</h2>
+                <div class="map-container">
+                    <iframe 
+                        width="100%" 
+                        height="400" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://maps.google.com/maps?q=13.779840,44.709862&z=15&output=embed">
+                    </iframe>
+                    <p style="margin-top: 20px; font-size: 18px;">
+                        <i class="fas fa-location-dot" style="color: #4fc3f7; margin-left: 10px;"></i>
+                        <span class="address-text" onclick="openGPS(13.779840, 44.709862)">
+                            اليمن، تعز، شارع جمال
+                        </span>
+                    </p>
+                    <p style="margin-top: 15px; color: #aaa;">
+                        <i class="fas fa-info-circle" style="margin-left: 10px;"></i>
+                        متواجد للعمل عن بعد أو حضورياً في مقر الشركة
+                    </p>
+                    <a href="#" class="map-link" onclick="openGPS(13.779840, 44.709862); return false;">
+                        <i class="fas fa-map"></i>
+                        فتح في GPS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function openGPS(lat, lng) {
+            const url = `https://www.google.com/maps?q=${lat},${lng}`;
+            window.open(url, '_blank');
+        }
+
+        window.onload = function() {
+            const img = document.querySelector('.profile-img');
+            img.onerror = function() {
+                this.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\'%3E%3Crect width=\'180\' height=\'180\' fill=\'%231e1e3a\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%234fc3f7\' font-size=\'20\'%3Eمازن الجيلاني%3C/text%3E%3C/svg%3E';
+            };
+        };
+    </script>
+</body>
+</html>
